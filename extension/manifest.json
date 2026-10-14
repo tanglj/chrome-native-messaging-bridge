@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Native Messaging Bridge",
+  "version": "0.2.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtYBMAfGO5TxO2kUIGT+Ykndi9xf9i//yVHirZJxlqjqfpk0nrm5Ke++4ApAZtMJZmt+UHmEBaE2LKnFmFHNBEpQC0SqzqeZkoP14vWyFD6jUtQUsd66rtBCDR2HCwPXKl8vEAe0IGc7nDL7CwyA4IjBBU+BwZiSRg7NHmUo3mW1Jf9CidngYR/5834n0Le5OYxmgOypBx9EsI9BwuBOXKwIPIOlyOrlkyjnGiSWedoUOeaqGIlUejBWAsUo1yEzkM5dSne0HJrftsV789It1meHMP0slrJPSztvCc8QtaCJWZMhqcMDuQeFYJliqNgiu5UMRmy3lKA2x4T9HC0sirwIDAQAB",
+  "description": "用于受控认证请求的本地 Chrome 原生消息桥接。",
+  "action": {
+    "default_title": "Native Bridge",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "permissions": [
+    "alarms",
+    "cookies",
+    "nativeMessaging",
+    "storage"
+  ],
+  "host_permissions": [],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "com.local.native_bridge",
+  "description": "Chrome 本地原生消息桥接",
+  "path": "/请运行 scripts/register-chrome.sh 生成",
+  "type": "stdio",
+  "allowed_origins": []
+}

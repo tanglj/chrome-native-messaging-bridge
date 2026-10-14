@@ -1,0 +1,6 @@
+{
+  "hostName": "com.local.native_bridge",
+  "httpHost": "127.0.0.1",
+  "httpPort": 8765,
+  "maxBodyBytes": 1048576
+}

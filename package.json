@@ -1,0 +1,9 @@
+{
+  "name": "chrome-native-messaging-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "macOS Chrome Native Messaging 宿主",
+  "type": "module",
+  "scripts": {"start:host":"node ./host/native-host.mjs","start:client":"node ./host/client.mjs","install:host":"sh ./install.sh","uninstall:host":"sh ./uninstall.sh","register:chrome":"./scripts/register-chrome.sh","unregister:chrome":"./scripts/unregister-chrome.sh","package":"sh ./scripts/package-release.sh"},
+  "engines": {"node": ">=18"}
+}

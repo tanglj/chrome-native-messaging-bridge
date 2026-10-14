@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Native Bridge</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Native Bridge</h1>
+        <button id="refreshBtn" title="Refresh">Refresh</button>
+      </header>
+
+      <section class="native-status">
+        <span id="nativeDot" class="dot"></span>
+        <span id="nativeStatus">Checking native host...</span>
+        <button id="connectBtn">Connect</button>
+        <button id="pingBtn">Ping</button>
+      </section>
+
+      <h2>Allowed Web Hosts</h2>
+      <section class="add-host">
+        <label>
+          Web host or origin
+          <input id="webHostInput" autocomplete="off" placeholder="oneapi-comate.baidu-int.com">
+        </label>
+        <button id="addWebHostBtn">Allow Host</button>
+      </section>
+      <p class="hint">
+        Configured native hosts can access only these web hosts through browser fetch or cookie messages.
+      </p>
+      <section>
+        <div id="webHostList" class="host-list"></div>
+      </section>
+
+      <section class="fetch-panel">
+        <label>
+          Browser fetch URL
+          <input id="fetchUrlInput" autocomplete="off" placeholder="https://oneapi-comate.baidu-int.com/api/...">
+        </label>
+        <button id="fetchUrlBtn">Fetch URL</button>
+      </section>
+
+      <pre id="output"></pre>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

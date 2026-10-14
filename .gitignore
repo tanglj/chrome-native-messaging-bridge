@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# 运行产物（宿主日志、桥接测试数据、release 打包输出）
+*.log
+bridge-test-results/
+dist/
+
+# 依赖与环境（当前无 npm 依赖；.env 防止日后存放 token/cookie 等敏感配置被误提交）
+node_modules/
+.env
+.env.*
+
+# 编辑器
+.vscode/
+.idea/
