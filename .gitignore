@@ -1,6 +1,10 @@
 # macOS
 .DS_Store
 
+# Windows 注册产物（register-chrome.ps1 生成，含本机绝对路径）
+host/*.cmd
+host/*.win.json
+
 # 运行产物（宿主日志、桥接测试数据、release 打包输出）
 *.log
 bridge-test-results/

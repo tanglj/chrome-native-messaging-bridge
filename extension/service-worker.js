@@ -145,6 +145,7 @@ async function getCookieHeader(url) {
   if (!await isAllowedUrl(url)) {
     throw new Error(`URL is not allowed: ${url}`);
   }
+  // getAll({ url }) 已按 URL 返回适用的 Cookie（含 Domain 级 Cookie），不额外扩大域名范围。
   const cookies = await chrome.cookies.getAll({ url });
   return cookies.map((cookie) => `${cookie.name}=${cookie.value}`).join("; ");
 }
@@ -252,7 +253,8 @@ async function connectNative(hostName = NATIVE_HOST_NAME) {
   entry.port.onMessage.addListener(async (message) => {
     const id = message?.id || null;
     try {
-      const pending = entry.pendingTests.shift();
+      // 只有无 id 的宿主回执才是 testNative 的响应，避免误吞 /rpc 的桥接响应
+      const pending = !id ? entry.pendingTests.shift() : null;
       if (pending) {
         clearTimeout(pending.timeout);
         entry.lastMessage = message;
