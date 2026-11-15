@@ -2,8 +2,21 @@
   "name": "chrome-native-messaging-bridge",
   "version": "0.1.0",
   "private": true,
-  "description": "macOS Chrome Native Messaging 宿主",
+  "description": "Chrome Native Messaging 宿主（macOS / Windows）",
   "type": "module",
-  "scripts": {"start:host":"node ./host/native-host.mjs","start:client":"node ./host/client.mjs","install:host":"sh ./install.sh","uninstall:host":"sh ./uninstall.sh","register:chrome":"./scripts/register-chrome.sh","unregister:chrome":"./scripts/unregister-chrome.sh","package":"sh ./scripts/package-release.sh"},
+  "scripts": {
+    "start:host": "node ./host/native-host.mjs",
+    "start:client": "node ./host/client.mjs",
+    "install:host": "sh ./install.sh",
+    "uninstall:host": "sh ./uninstall.sh",
+    "install:host:win": "powershell -NoProfile -ExecutionPolicy Bypass -File ./install.ps1",
+    "uninstall:host:win": "powershell -NoProfile -ExecutionPolicy Bypass -File ./uninstall.ps1",
+    "register:chrome": "./scripts/register-chrome.sh",
+    "unregister:chrome": "./scripts/unregister-chrome.sh",
+    "register:chrome:win": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/register-chrome.ps1",
+    "unregister:chrome:win": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/unregister-chrome.ps1",
+    "package": "sh ./scripts/package-release.sh",
+    "package:win": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/package-release.ps1"
+  },
   "engines": {"node": ">=18"}
 }
